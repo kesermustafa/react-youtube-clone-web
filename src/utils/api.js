@@ -1,16 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
 
 const api = axios.create({
-
-    baseURL: import.meta.env.BASE_URL,
+    baseURL: import.meta.env.VITE_API_URL,
     params: {
         geo: 'TR',
-        lang: 'tr'
+        lang: 'tr',
     },
     headers: {
-        'X-RapidAPI-Key': import.meta.env.API_KEY,
-        'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
-    }
+        'x-rapidapi-key': import.meta.env.VITE_API_KEY,
+        'x-rapidapi-host': 'yt-api.p.rapidapi.com',
+    },
 });
 
 export default api;
