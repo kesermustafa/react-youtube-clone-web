@@ -4,6 +4,7 @@ import api from '../utils/api';
 
 export const VideoContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const VideoProvider = ({children}) => {
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
     const [video, setVideo] = useState();
