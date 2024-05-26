@@ -1,19 +1,29 @@
 import {useState} from "react";
 import millify from "millify";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 
 // eslint-disable-next-line react/prop-types
-const VideoCard = ({video}) => {
+const VideoCard = ({video, isRow}) => {
 
     const [isHover, setHover] = useState(false);
 
     const navigate = useNavigate();
 
+    const location = useLocation();
+
+    const handleNavigate = () => {
+        if (location.pathname.startsWith('/watch')) {
+            navigate(`?v=${video?.videoId}`);
+        } else {
+            navigate(`watch?v=${video?.videoId}`);
+        }
+    };
+
 
     return (
-        <div onClick={() =>navigate(`watch?v=${video?.videoId}`)}
-             className='cursor-pointer'
+        <div onClick={handleNavigate}
+             className={`${isRow ? "row" : ""} cursor-pointer`}
              onMouseEnter={() => setHover(!isHover)}
              onMouseLeave={() => setHover(false)}
         >

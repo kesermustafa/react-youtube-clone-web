@@ -32,3 +32,31 @@ body{
     background: #888888;
     border-radius: 10px;
 }
+
+.detail-page{
+    display: grid;
+    gap: 40px;
+    grid-template-columns:auto 400px;
+    padding: 40px 60px;
+}
+
+.row{
+    display: grid;
+    grid-template-columns:140px auto;
+    align-items: center;
+    gap: 20px;
+;
+}
+
+@media (min-width: 1400px) {
+    .detail-page{
+        padding: 40px 100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .detail-page{
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+}
