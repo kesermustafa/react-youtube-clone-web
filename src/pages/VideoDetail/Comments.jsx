@@ -6,7 +6,6 @@ import {TiArrowSortedDown} from "react-icons/ti";
 // eslint-disable-next-line react/prop-types
 const Comments = ({data}) => {
 
-    console.log(data)
     return (
         <div>
             <h2 className="ps-2 pt-4">{data?.commentsCount}</h2>
@@ -14,6 +13,7 @@ const Comments = ({data}) => {
                    className= "w-full bg-transparent outline-none mb-4 p-2 border-b"
                    placeholder="Your comments" />
 
+            {/* eslint-disable-next-line react/prop-types */}
             {data?.data.map((item, index) => (
 
                 <div key={index} className='flex gap-5 mt-5 px-5'>
@@ -40,16 +40,15 @@ const Comments = ({data}) => {
                                     className='bg-transparent  transition duration-300 hover:bg-gray-400 px-3 py-1 rounded-full'>Yanitla
                                 </button>
                             </div>
-
-
-
                         </div>
+
                         {item.replyCount > 0 && (
                             <div className='flex gap-4 items-center text-blue-500 hover:bg-[#11263D] w-fit pe-4 rounded cursor-pointer'>
                                 <TiArrowSortedDown />
                                 {item.replyCount} yanit
                             </div>
                         )}
+
                     </div>
                 </div>
 

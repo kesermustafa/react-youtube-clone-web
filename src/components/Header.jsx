@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {CiSearch} from "react-icons/ci";
 import {FaBell} from "react-icons/fa";
 import {IoIosVideocam} from "react-icons/io";
@@ -6,6 +6,7 @@ import {MdVideoLibrary} from "react-icons/md";
 
 const Header = () => {
 
+    const navigate = useNavigate();
     const handelSubmit = (e) =>{
         e.preventDefault();
 
@@ -13,6 +14,8 @@ const Header = () => {
         if (text.trim() === ""){
             return;
         }
+
+        navigate(`/results?search_query=${text}`)
     }
 
     return (
