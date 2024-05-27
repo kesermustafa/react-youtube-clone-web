@@ -21,15 +21,15 @@ const VideoCard = ({video, isRow}) => {
                     className="w-full h-full rounded-lg"
                     src={
                         isHover && video?.richThumbnail
-                            ? video.richThumbnail[0].url
-                            : video.thumbnail[0].url
+                            ? video?.richThumbnail[0]?.url
+                            : video?.thumbnail[0]?.url
                     } alt=""/>
             </div>
 
             <div className="flex gap-4 mt-5 ">
                 <img
                     className="w-14 h-14 c-pic rounded-full cursor-pointer"
-                    src={video.channelThumbnail && video.channelThumbnail[0].url}
+                    src={video?.channelThumbnail && video?.channelThumbnail[0]?.url}
                     alt="channel logo"
                 />
                 <div className="">
